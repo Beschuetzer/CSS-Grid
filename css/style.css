@@ -19,11 +19,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end grid-end];
-}
-.container > * {
-  font-size: 3rem;
-  padding: 4rem;
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
 }
 
 .sidebar {
@@ -43,9 +39,12 @@ body {
 }
 
 .features {
-  background-color: #aaaaaa;
   grid-row: 2/span 1;
   grid-column: center-start/center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem;
 }
 
 .story__pictures {
