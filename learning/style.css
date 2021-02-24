@@ -5,27 +5,39 @@
   grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 144px [grid-end];
   grid-template-rows: [header-start] 72px [header-end box-start] 2fr [box-end main-start] 4fr [main-end footer-start] 72px [footer-end];
   grid-gap: 20.5714285714px;
+  grid-template-areas: "head head head head" "sb1 sb2 sb3 sidebar" "main main main sidebar" "foot foot foot foot";
 }
 .challenge > * {
   color: white;
   background-color: orangered;
 }
 
+.small-box--1 {
+  grid-area: sb1;
+}
+
+.small-box--2 {
+  grid-area: sb2;
+}
+
+.small-box--3 {
+  grid-area: sb3;
+}
+
 .header {
-  grid-column: col-start 1/-1;
-  grid-row: header-start/header-end;
+  grid-area: head;
 }
 
 .sidebar {
-  grid-area: box-start/col-end 3/main-end/-1;
+  grid-area: sidebar;
 }
 
 .main-content {
-  grid-area: main-start/col-start 1/main-end/col-end 3;
+  grid-area: main;
 }
 
 .footer {
-  grid-area: footer-start/col-start 1/footer-end/-1;
+  grid-area: foot;
 }
 
 /*# sourceMappingURL=style.css.map */
