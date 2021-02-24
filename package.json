@@ -1,12 +1,16 @@
 {
   "name": "nexter",
   "version": "1.0.0",
-  "description": "Nexter webpage",
+  "description": "CSS Grid Learning",
   "main": "index.js",
   "scripts": {
-    "start:server": "live-server learning",
+    "start:server1": "live-server learning",
     "watch1:sass": "sass learning/sass/main.scss learning/style.css --watch",
-    "start1": "npm-run-all --parallel start:server watch1:sass"
+    "start1": "npm-run-all --parallel start:server1 watch1:sass",
+
+    "start:server": "live-server --browser=firefox",
+    "watch:sass": "sass sass/main.scss css/style.css --watch",
+    "start": "npm-run-all --parallel start:server watch:sass"
   },
   "author": "Adam",
   "license": "ISC",
