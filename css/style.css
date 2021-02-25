@@ -132,6 +132,25 @@ body {
 .story__pictures {
   background-color: #c69963;
   grid-column: full-start/col-start 5;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  align-items: center;
+  background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+}
+.story__img--1 {
+  width: 100%;
+  grid-row: 2/span 4;
+  grid-column: 2/span 4;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+.story__img--2 {
+  width: 118%;
+  grid-column: 4/-1;
+  grid-row: 4/-1;
+  z-index: 100;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  align-self: flex-start;
 }
 .story__content {
   background-color: #f8f8f8;
