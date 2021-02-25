@@ -243,8 +243,13 @@ body {
 }
 
 .gallery {
-  background-color: #54483a;
   grid-column: full-start/full-end;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 6.47vw);
+}
+.gallery__img {
+  width: 100%;
 }
 
 .footer {
