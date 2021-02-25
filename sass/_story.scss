@@ -9,7 +9,8 @@
         align-items: center;
 
         background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), url(../img/back.jpg);
-        // background-blend-mode: color;
+        background-size: cover;
+        background-position: bottom;
     }
 
     &__img--1 {
