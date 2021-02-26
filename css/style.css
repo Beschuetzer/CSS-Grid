@@ -145,10 +145,6 @@ body {
   grid-column: 2/-1;
 }
 
-.story {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-}
 .story__pictures {
   background-color: #c69963;
   grid-column: full-start/col-start 5;
