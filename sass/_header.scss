@@ -11,7 +11,7 @@
     grid-gap: $default-font-size;
     justify-content: center;
     
-    padding: $default-font-size * 3 $default-font-size * 5 $default-font-size * 5;
+    padding: $default-font-size * 5 $default-font-size * 5 $default-font-size * 5;
 
     &__logo {
         height: $default-font-size * 2;
@@ -19,9 +19,27 @@
         // align-self: center;
     }
     &__seenon-text {
-        
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-gap: $default-font-size;
+        align-items: center;
+        font-size: $default-font-size;
+        color: $color-grey-light-1;
+        // padding: $default-font-size;
+
+        &:before, &:after {
+            content: '';
+            height: .1rem;
+            display: block;
+            background-color: currentColor;
+        }
     }
     &__seenon-logos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: $default-font-size * 2;
+        justify-items: center;
+        filter: brightness(70%);
         img {
             height: $default-font-size * 1.5;
         }

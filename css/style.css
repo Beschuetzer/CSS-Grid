@@ -122,11 +122,32 @@ body {
   grid-template-columns: max-content;
   grid-gap: 16px;
   justify-content: center;
-  padding: 48px 80px 80px;
+  padding: 80px 80px 80px;
 }
 .header__logo {
   height: 32px;
   justify-self: center;
+}
+.header__seenon-text {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-gap: 16px;
+  align-items: center;
+  font-size: 16px;
+  color: #f8f8f8;
+}
+.header__seenon-text:before, .header__seenon-text:after {
+  content: "";
+  height: 0.1rem;
+  display: block;
+  background-color: currentColor;
+}
+.header__seenon-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 32px;
+  justify-items: center;
+  filter: brightness(70%);
 }
 .header__seenon-logos img {
   height: 24px;
