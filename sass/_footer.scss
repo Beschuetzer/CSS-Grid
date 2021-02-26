@@ -25,6 +25,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        pointer-events: all;
+
     }
     &__link:link, &__link:visited {
         width: 100%;
@@ -36,5 +38,18 @@
         display:flex;
         justify-content: center;
         align-items: center;
+        transition: color .2s,
+                    background-color .2s,
+                    transform .2s cubic-bezier(1,0,0,1);
     }
+    &__link:hover, &__link:active {
+        background-color: $color-primary;
+        color: $color-white;
+        transform: translateY(-$default-font-size  * .25);
+    }
+}
+.copyright {
+    font-size: $default-font-size * .75;
+    padding: $default-font-size * 2 0;
+    color: $color-grey-light-2;
 }

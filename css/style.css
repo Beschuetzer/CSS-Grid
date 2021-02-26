@@ -327,6 +327,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: all;
 }
 .nav__link:link, .nav__link:visited {
   width: 100%;
@@ -338,6 +339,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s cubic-bezier(1, 0, 0, 1);
+}
+.nav__link:hover, .nav__link:active {
+  background-color: #c69963;
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.copyright {
+  font-size: 12px;
+  padding: 32px 0;
+  color: #aaaaaa;
 }
 
 /*# sourceMappingURL=style.css.map */
