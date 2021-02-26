@@ -88,6 +88,22 @@ body {
   background-color: #c69963;
   grid-row: 1/-1;
   grid-column: sidebar-start/sidebar-end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.nav-menu {
+  position: fixed;
+  top: -40px;
+}
+.nav-btn {
+  height: 64px;
+  width: 64px;
+  fill: #fff;
+  cursor: pointer;
+  margin-top: 4rem;
 }
 
 .header {
@@ -129,6 +145,10 @@ body {
   grid-column: 2/-1;
 }
 
+.story {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
 .story__pictures {
   background-color: #c69963;
   grid-column: full-start/col-start 5;
