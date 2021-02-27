@@ -6,6 +6,11 @@
     align-content: center;
     justify-items: center;
     grid-row-gap: $default-font-size;
+    padding: $default-font-size * 2;
+
+    @include respond(third-biggest) {
+        grid-column: full-start / grid-end;
+    }
 
     &__list {
         display: grid;  
@@ -13,12 +18,26 @@
         align-items: center;
         grid-row-gap: 2vmin;
         grid-column-gap: 1vmin;
+
+        @include respond(third-biggest) {
+            grid-template-columns: repeat(3, min-content max-content);
+            grid-column-gap: 0;
+
+        }
     }
     &__image {
         width: $default-font-size * 4;
         // width: 5vmin;
         display: block;
         border-radius: 50%;
+        @include respond(third-biggest) {
+            text-align: center;
+            margin-right: $default-font-size;
+            &:not(:first-child) {
+                margin-left: $default-font-size * 2;
+
+            }
+        }
     }
     &__sold {
         text-transform: uppercase;

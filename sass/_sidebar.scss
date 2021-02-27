@@ -11,6 +11,7 @@
         grid-column: 1/-1;
         grid-row: 1/span 1;
         align-items: center;
+        justify-content: flex-end;
     }
 }
 
@@ -21,6 +22,7 @@
 
         @include respond(third-biggest) {
             position: static;
+            margin-right: .75rem;
         }
     }
     &-btn {
