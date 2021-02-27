@@ -1,13 +1,14 @@
 .header {
     background-color: $color-grey-dark-1;
     grid-column: full-start / col-end 6;
+    // grid-row: 2 / span 1;
     background-image: linear-gradient(rgba($color-secondary, .85), rgba($color-secondary, .85)), url('../img/hero.jpeg');
     background-size: cover;
     background-position: center;
 
     display: grid;
     grid-template-rows: 1fr repeat(2, min-content) $default-font-size * 4 1fr;
-    grid-template-columns: max-content;
+    grid-template-columns: minmax(min-content, max-content);
     grid-gap: $default-font-size;
     justify-content: center;
     
@@ -18,30 +19,35 @@
         justify-self: center;
         // align-self: center;
     }
-    &__seenon-text {
-        display: grid;
-        grid-template-columns: 1fr max-content 1fr;
-        grid-gap: $default-font-size;
-        align-items: center;
-        font-size: $default-font-size;
-        color: $color-grey-light-1;
-        // padding: $default-font-size;
+    &__seenon {
+        align-self: center;
+        &-text {
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-gap: $default-font-size;
+            align-items: center;
+            font-size: $default-font-size;
+            color: $color-grey-light-1;
+            // padding: $default-font-size;
 
-        &:before, &:after {
-            content: '';
-            height: .1rem;
-            display: block;
-            background-color: currentColor;
+            &:before, &:after {
+                content: '';
+                height: .1rem;
+                display: block;
+                background-color: currentColor;
+            }
         }
-    }
-    &__seenon-logos {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: $default-font-size * 2;
-        justify-items: center;
-        filter: brightness(70%);
-        img {
-            height: $default-font-size * 1.5;
+        &-logos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            grid-gap: $default-font-size * 2;
+            justify-items: center;
+            filter: brightness(70%);
+            img {
+                max-height: $default-font-size * 1.5;
+                max-width: 100%;
+            }
         }
     }
     &__button {

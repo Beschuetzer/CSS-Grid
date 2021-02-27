@@ -8,6 +8,21 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media only screen and (max-width: 83.4375em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 75.3125em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 67.1875em) {
+  html {
+    font-size: 43.75%;
+  }
+}
 
 body {
   font-family: "Nunito", sans-serif;
@@ -21,21 +36,27 @@ body {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
 }
+@media only screen and (max-width: 67.1875em) {
+  .container {
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
+  }
+}
 
 .mb-sm {
-  margin-bottom: 16px !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .mb-md {
-  margin-bottom: 24px !important;
+  margin-bottom: 2.25rem !important;
 }
 
 .mb-lg {
-  margin-bottom: 32px !important;
+  margin-bottom: 3rem !important;
 }
 
 .mb-xl {
-  margin-bottom: 64px !important;
+  margin-bottom: 6rem !important;
 }
 
 .heading-4, .heading-3, .heading-2, .heading-1 {
@@ -44,12 +65,12 @@ body {
 }
 
 .heading-1 {
-  font-size: 56px;
+  font-size: 5.25rem;
   color: #f8f8f8;
   line-height: 1;
 }
 .heading-2 {
-  font-size: 32px;
+  font-size: 3rem;
   font-style: italic;
   line-height: 1;
 }
@@ -60,12 +81,12 @@ body {
   color: #54483a;
 }
 .heading-3 {
-  font-size: 16px;
+  font-size: 1.5rem;
   color: #c69963;
   text-transform: uppercase;
 }
 .heading-4 {
-  font-size: 20px;
+  font-size: 1.875rem;
 }
 .heading-4--light {
   color: #f8f8f8;
@@ -81,7 +102,7 @@ body {
   border: none;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
-  padding: 16px 32px;
+  padding: 1.5rem 3rem;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -98,17 +119,34 @@ body {
   align-items: flex-start;
   position: relative;
 }
+@media only screen and (max-width: 67.1875em) {
+  .sidebar {
+    grid-column: 1/-1;
+    grid-row: 1/span 1;
+    align-items: center;
+  }
+}
 
 .nav-menu {
   position: fixed;
-  top: -40px;
+  top: -3.75rem;
+}
+@media only screen and (max-width: 67.1875em) {
+  .nav-menu {
+    position: static;
+  }
 }
 .nav-btn {
-  height: 64px;
-  width: 64px;
+  height: 6rem;
+  width: 6rem;
   fill: #fff;
   cursor: pointer;
   margin-top: 4rem;
+}
+@media only screen and (max-width: 67.1875em) {
+  .nav-btn {
+    margin-top: 0;
+  }
 }
 
 .header {
@@ -118,22 +156,25 @@ body {
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: 1fr repeat(2, min-content) 64px 1fr;
-  grid-template-columns: max-content;
-  grid-gap: 16px;
+  grid-template-rows: 1fr repeat(2, min-content) 6rem 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-gap: 1.5rem;
   justify-content: center;
-  padding: 80px 80px 80px;
+  padding: 7.5rem 7.5rem 7.5rem;
 }
 .header__logo {
-  height: 32px;
+  height: 3rem;
   justify-self: center;
+}
+.header__seenon {
+  align-self: center;
 }
 .header__seenon-text {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
-  grid-gap: 16px;
+  grid-gap: 1.5rem;
   align-items: center;
-  font-size: 16px;
+  font-size: 1.5rem;
   color: #f8f8f8;
 }
 .header__seenon-text:before, .header__seenon-text:after {
@@ -145,12 +186,14 @@ body {
 .header__seenon-logos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 32px;
+  align-items: center;
+  grid-gap: 3rem;
   justify-items: center;
   filter: brightness(70%);
 }
 .header__seenon-logos img {
-  height: 24px;
+  max-height: 2.25rem;
+  max-width: 100%;
 }
 .header__button {
   align-self: flex-start;
@@ -164,27 +207,27 @@ body {
   justify-content: center;
   align-content: center;
   justify-items: center;
-  grid-row-gap: 16px;
+  grid-row-gap: 1.5rem;
 }
 .realtors__list {
   display: grid;
   grid-template-columns: min-content max-content;
   align-items: center;
-  grid-gap: 2.5vmin;
+  grid-row-gap: 2vmin;
+  grid-column-gap: 1vmin;
 }
 .realtors__image {
-  width: 64px;
+  width: 6rem;
   display: block;
   border-radius: 50%;
 }
 .realtors__sold {
   text-transform: uppercase;
   color: #aaaaaa;
-  margin-top: -5.28px;
+  margin-top: -0.495rem;
 }
 
 .features {
-  grid-row: 2/span 1;
   grid-column: center-start/center-end;
   margin: 15rem 0;
   display: grid;
@@ -196,19 +239,19 @@ body {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content;
-  grid-row-gap: 16px;
-  grid-column-gap: 24px;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.25rem;
 }
 .feature__icon {
   fill: #c69963;
   width: 4.5rem;
   height: 4.5rem;
   grid-row: 1/span 2;
-  transform: translateY(-8px);
+  transform: translateY(-0.75rem);
 }
 .feature__text {
   align-self: flex-start;
-  font-size: 16px;
+  font-size: 1.5rem;
   grid-column: 2/-1;
 }
 
@@ -227,44 +270,44 @@ body {
   width: 100%;
   grid-row: 2/span 4;
   grid-column: 2/span 4;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.2);
 }
 .story__img--2 {
   width: 118%;
   grid-column: 4/-1;
   grid-row: 4/-1;
   z-index: 100;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.2);
   align-self: flex-start;
 }
 .story__content {
   background-color: #f8f8f8;
   grid-column: col-start 5/full-end;
-  padding: 64px 8vw;
+  padding: 6rem 8vw;
   display: grid;
   grid-auto-rows: min-content;
   align-content: center;
   justify-items: flex-start;
 }
 .story__text {
-  font-size: 16px;
+  font-size: 1.5rem;
   font-style: italic;
-  margin-bottom: 48px;
+  margin-bottom: 4.5rem;
 }
 
 .homes {
   grid-column: center-start/center-end;
-  margin: 150px 0;
+  margin: 14.0625rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 64px;
+  grid-gap: 6rem;
 }
 
 .home {
   background-color: #f8f8f8;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 32px;
+  grid-row-gap: 3rem;
 }
 .home__img {
   width: 100%;
@@ -274,29 +317,29 @@ body {
 }
 .home__like {
   fill: #c69963;
-  height: 32px;
-  width: 32px;
-  margin: 8px;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.75rem;
   grid-area: 1/2/span 1/span 1;
   justify-self: flex-end;
   z-index: 1000;
 }
 .home__location, .home__rooms, .home__area, .home__price {
-  font-size: 16px;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
 }
 .home__location p, .home__rooms p, .home__area p, .home__price p {
-  margin-left: 5.28px;
+  margin-left: 0.495rem;
 }
 .home__location svg, .home__rooms svg, .home__area svg, .home__price svg {
   stroke: #000;
   fill: #c69963;
-  height: 16px;
-  width: 16px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 .home__location, .home__rooms {
-  margin-top: 16px;
+  margin-top: 1.5rem;
 }
 .home__location, .home__area {
   margin-left: 25%;
@@ -310,10 +353,10 @@ body {
   grid-row: 1/span 1;
   z-index: 1000;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1.5rem;
   font-weight: 400;
   text-align: center;
-  padding: 12px;
+  padding: 1.125rem;
   background-color: #101d2c;
   color: #fff;
   width: 75%;
@@ -331,8 +374,8 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 6.47vw);
-  padding: 16px;
-  grid-gap: 16px;
+  padding: 1.5rem;
+  grid-gap: 1.5rem;
 }
 .gallery__item--1 {
   grid-area: 1/1/span 2/span 1;
@@ -389,14 +432,14 @@ body {
 .footer {
   background-color: #101d2c;
   grid-column: full-start/full-end;
-  padding: 64px;
+  padding: 6rem;
 }
 
 .nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-rows: 128px;
-  grid-gap: 16px;
+  grid-auto-rows: 12rem;
+  grid-gap: 1.5rem;
   align-items: center;
   text-align: center;
   list-style: none;
@@ -416,9 +459,9 @@ body {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.5rem;
   color: #c69963;
-  padding: 32px;
+  padding: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,12 +470,12 @@ body {
 .nav__link:hover, .nav__link:active {
   background-color: #c69963;
   color: #fff;
-  transform: translateY(-4px);
+  transform: translateY(-0.375rem);
 }
 
 .copyright {
-  font-size: 12px;
-  padding: 32px 0;
+  font-size: 1.125rem;
+  padding: 3rem 0;
   color: #aaaaaa;
 }
 

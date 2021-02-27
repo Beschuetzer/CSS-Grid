@@ -1,0 +1,17 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == small-font {
+        @media only screen and (max-width: 29em) {@content;}
+    }
+    @if $breakpoint == third-biggest {
+        @media only screen and (max-width: 67.1875em){@content;}   //600px
+    }
+    @if $breakpoint == second-biggest {
+        @media only screen and (max-width: 75.3125em){@content;}  //900px
+    }
+    @if $breakpoint == biggest {
+        @media only screen and (max-width: 83.4375em){@content;}       //1200px
+    }
+    @if $breakpoint == big-desktop{
+        @media only screen and (min-width: 112.5em){@content;}      //1800px
+    }
+}

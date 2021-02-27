@@ -14,7 +14,7 @@ $color-white: #fff;
 $color-black: #000;
 
 // FONT VARIABLES
-$default-font-size: 16px;
+$default-font-size: 1.5rem;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
@@ -30,6 +30,16 @@ $shadow-light: 0 $default-font-size $default-font-size * 3 rgba($color-black, .2
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @include respond(biggest) {
+        font-size: 56.25%;
+    }
+    @include respond(second-biggest) {
+        font-size: 50%;
+    }
+    @include respond(third-biggest) {
+        font-size: 43.75%;
+    }
 }
 
 body{
@@ -43,4 +53,9 @@ body{
     display: grid;
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
+
+    @include respond(third-biggest) {
+        grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end]; 
+    }
 }
