@@ -3,6 +3,10 @@
     grid-column: full-start / full-end;
     padding: $default-font-size * 4;
 
+    @include respond(realtor-break) {
+        padding: 10vmin;
+    }
+
 }
 
 .nav {
@@ -17,6 +21,10 @@
     list-style: none;
     font-family: $font-display;
     font-weight: 400;
+
+    @include respond(realtor-break) {
+        grid-gap: 5vmin;
+    }
 
     &__item {
         background-color: rgba($color-primary, .05);
@@ -50,6 +58,11 @@
 }
 .copyright {
     font-size: $default-font-size * .75;
-    padding: $default-font-size * 2 0;
+    padding: $default-font-size * 2 0 0 0;
     color: $color-grey-light-2;
+
+    @include respond(realtor-break) {
+    padding: 5vmin 0 0 0;
+        
+    }
 }
