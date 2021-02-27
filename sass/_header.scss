@@ -3,12 +3,12 @@
     grid-column: full-start / col-end 6;
 
     // grid-row: 2 / span 1;
-    background-image: linear-gradient(rgba($color-secondary, .85), rgba($color-secondary, .85)), url('../img/hero.jpeg');
+    background-image: linear-gradient(rgba($color-secondary, .925), rgba($color-secondary, .925)), url('../img/hero.jpeg');
     background-size: cover;
     background-position: center;
 
     display: grid;
-    grid-template-rows: 1fr repeat(2, min-content) $default-font-size * 4 1fr;
+    grid-template-rows: 1fr repeat(2, min-content) min-content 1fr;
     grid-template-columns: minmax(min-content, max-content);
     grid-gap: $default-font-size;
     justify-content: center;
@@ -17,6 +17,13 @@
 
     @include respond(third-biggest) {
         grid-column: full-start / grid-end;
+    }
+    @include respond(fourth-biggest) {
+        justify-items: center;
+    }
+    @include respond(realtor-break) {
+        padding: $default-font-size $default-font-size $default-font-size * 2 $default-font-size;
+        
     }
 
     &__logo {
@@ -58,6 +65,10 @@
     &__button {
         align-self: flex-start;
         justify-self: flex-start;
+
+        @include respond(fourth-biggest) {
+            width: 100%;
+        }
     }   
     
     

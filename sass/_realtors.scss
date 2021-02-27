@@ -6,11 +6,15 @@
     align-content: center;
     justify-items: center;
     grid-row-gap: $default-font-size;
-    padding: $default-font-size * 2;
+    padding: $default-font-size * 3;
 
     @include respond(third-biggest) {
         grid-column: full-start / grid-end;
     }
+    @include respond(realtor-break) {
+        padding: $default-font-size * 1.5;
+    }
+
 
     &__list {
         display: grid;  
@@ -23,7 +27,7 @@
             grid-template-columns: repeat(3, min-content max-content);
             grid-column-gap: 0;
         }
-        @include respond(fourth-biggest) {
+        @include respond(realtor-break) {
             grid-template-columns: min-content max-content;
             grid-column-gap: 0;
         }
@@ -40,7 +44,7 @@
                 margin-left: $default-font-size * 2;
             }
         }
-        @include respond(fourth-biggest) {
+        @include respond(realtor-break) {
             &:not(:first-child) {
                 margin-left: 0;
             }

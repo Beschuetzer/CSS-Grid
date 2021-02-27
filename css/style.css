@@ -38,7 +38,7 @@ body {
 }
 @media only screen and (max-width: 45.9375em) {
   .container {
-    grid-template-rows: max-content 50vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: max-content minmax(min-content, 50vh) min-content 40vw repeat(3, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
   }
 }
@@ -159,11 +159,11 @@ body {
 .header {
   background-color: #54483a;
   grid-column: full-start/col-end 6;
-  background-image: linear-gradient(rgba(16, 29, 44, 0.85), rgba(16, 29, 44, 0.85)), url("../img/hero.jpeg");
+  background-image: linear-gradient(rgba(16, 29, 44, 0.925), rgba(16, 29, 44, 0.925)), url("../img/hero.jpeg");
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: 1fr repeat(2, min-content) 6rem 1fr;
+  grid-template-rows: 1fr repeat(2, min-content) min-content 1fr;
   grid-template-columns: minmax(min-content, max-content);
   grid-gap: 1.5rem;
   justify-content: center;
@@ -172,6 +172,16 @@ body {
 @media only screen and (max-width: 67.1875em) {
   .header {
     grid-column: full-start/grid-end;
+  }
+}
+@media only screen and (max-width: 45.9375em) {
+  .header {
+    justify-items: center;
+  }
+}
+@media only screen and (max-width: 33.8125em) {
+  .header {
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
   }
 }
 .header__logo {
@@ -212,6 +222,11 @@ body {
   align-self: flex-start;
   justify-self: flex-start;
 }
+@media only screen and (max-width: 45.9375em) {
+  .header__button {
+    width: 100%;
+  }
+}
 
 .realtors {
   background-color: #101d2c;
@@ -221,11 +236,16 @@ body {
   align-content: center;
   justify-items: center;
   grid-row-gap: 1.5rem;
-  padding: 3rem;
+  padding: 4.5rem;
 }
 @media only screen and (max-width: 67.1875em) {
   .realtors {
     grid-column: full-start/grid-end;
+  }
+}
+@media only screen and (max-width: 33.8125em) {
+  .realtors {
+    padding: 2.25rem;
   }
 }
 .realtors__list {
@@ -241,7 +261,7 @@ body {
     grid-column-gap: 0;
   }
 }
-@media only screen and (max-width: 45.9375em) {
+@media only screen and (max-width: 33.8125em) {
   .realtors__list {
     grid-template-columns: min-content max-content;
     grid-column-gap: 0;
@@ -261,7 +281,7 @@ body {
     margin-left: 3rem;
   }
 }
-@media only screen and (max-width: 45.9375em) {
+@media only screen and (max-width: 33.8125em) {
   .realtors__image:not(:first-child) {
     margin-left: 0;
   }

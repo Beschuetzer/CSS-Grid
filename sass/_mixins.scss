@@ -1,4 +1,7 @@
 @mixin respond($breakpoint) {
+    @if $breakpoint == realtor-break {
+        @media only screen and (max-width: 33.8125em) {@content;}
+    }
     @if $breakpoint == fourth-biggest {
         @media only screen and (max-width: 45.9375em) {@content;}
     }
