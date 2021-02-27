@@ -10,7 +10,12 @@
 
     "start:server": "live-server --browser=firefox",
     "watch:sass": "sass sass/main.scss css/style.css --watch",
-    "start": "npm-run-all --parallel start:server watch:sass"
+    "start": "npm-run-all --parallel start:server watch:sass",
+
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss css/style.comp.css -o css/style.prefix.css --use autoprefixer -b 'last 10 versions'",
+    "compress:css": "sass css/style.prefix.css css/style.css --style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "author": "Adam",
   "license": "ISC",
