@@ -55,11 +55,10 @@ body{
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
 
     @include respond(third-biggest) {
-        grid-template-rows: max-content 60vh min-content max-content repeat(3, min-content);
+        grid-template-rows: max-content 60vh;
         grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end]; 
     }
     @include respond(fourth-biggest) {
-        grid-template-rows: max-content minmax(min-content, 50vh) min-content max-content repeat(3, min-content);
-        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end]; 
+        grid-template-rows: max-content minmax(min-content, 50vh);
     }
 }

@@ -53,7 +53,7 @@
         justify-items: flex-start;
         @include respond(fourth-biggest) {
             grid-column: full-start / full-end;
-            
+            grid-row: 5 / span 1;
         }
         @include respond(realtor-break) {
             padding: 10vmin;
