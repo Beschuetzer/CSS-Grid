@@ -22,7 +22,10 @@
         @include respond(third-biggest) {
             grid-template-columns: repeat(3, min-content max-content);
             grid-column-gap: 0;
-
+        }
+        @include respond(fourth-biggest) {
+            grid-template-columns: min-content max-content;
+            grid-column-gap: 0;
         }
     }
     &__image {
@@ -35,7 +38,11 @@
             margin-right: $default-font-size;
             &:not(:first-child) {
                 margin-left: $default-font-size * 2;
-
+            }
+        }
+        @include respond(fourth-biggest) {
+            &:not(:first-child) {
+                margin-left: 0;
             }
         }
     }

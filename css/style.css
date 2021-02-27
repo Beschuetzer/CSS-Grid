@@ -36,6 +36,12 @@ body {
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
   }
 }
+@media only screen and (max-width: 45.9375em) {
+  .container {
+    grid-template-rows: max-content 50vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
+  }
+}
 
 .mb-sm {
   margin-bottom: 1.5rem !important;
@@ -62,6 +68,11 @@ body {
   font-size: 5.25rem;
   color: #f8f8f8;
   line-height: 1;
+}
+@media only screen and (max-width: 45.9375em) {
+  .heading-1 {
+    text-align: center;
+  }
 }
 .heading-2 {
   font-size: 3rem;
@@ -230,6 +241,12 @@ body {
     grid-column-gap: 0;
   }
 }
+@media only screen and (max-width: 45.9375em) {
+  .realtors__list {
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 0;
+  }
+}
 .realtors__image {
   width: 6rem;
   display: block;
@@ -242,6 +259,11 @@ body {
   }
   .realtors__image:not(:first-child) {
     margin-left: 3rem;
+  }
+}
+@media only screen and (max-width: 45.9375em) {
+  .realtors__image:not(:first-child) {
+    margin-left: 0;
   }
 }
 .realtors__sold {
