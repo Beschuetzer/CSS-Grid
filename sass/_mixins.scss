@@ -5,7 +5,7 @@
     @if $breakpoint == fourth-biggest {
         @media only screen and (max-width: 45.9375em) {@content;}
     }
-    @if $breakpoint == footer-small {
+    @if $breakpoint == footer-fine {
         @media only screen and (max-width: 50.6em) {@content;}
     }
     @if $breakpoint == third-biggest {

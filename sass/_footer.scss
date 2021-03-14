@@ -30,6 +30,12 @@
 		grid-gap: $scalingGap;
 	}
 
+	@include respond(footer-break) {
+		grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+	}
+	@include respond(footer-fine) {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
 	&__item {
 		background-color: rgba($color-primary, 0.05);
 		width: 100%;

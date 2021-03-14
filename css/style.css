@@ -701,6 +701,16 @@ body {
     grid-gap: 5vmin;
   }
 }
+@media only screen and (max-width: 92.5em) {
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+  }
+}
+@media only screen and (max-width: 50.6em) {
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
 .nav__item {
   background-color: rgba(198, 153, 99, 0.05);
   width: 100%;
