@@ -18,6 +18,8 @@ $default-font-size: 1.5rem;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+$scalingGap: 5vmin;
+
 //box shadow
 $shadow-light: 0 $default-font-size $default-font-size * 3 rgba($color-black, .2);
 
@@ -55,10 +57,13 @@ body{
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end];
 
     @include respond(third-biggest) {
-        grid-template-rows: max-content 60vh;
+        grid-template-rows: max-content minmax(min-content, 50vh);
         grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end grid-end]; 
     }
     @include respond(fourth-biggest) {
-        grid-template-rows: max-content minmax(min-content, 50vh);
+        // grid-template-rows: max-content minmax(min-content, 50vh);
+    }
+    @include respond(realtor-break) {
+        grid-template-rows: max-content minmax(min-content, 40vh);
     }
 }

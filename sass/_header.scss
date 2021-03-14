@@ -12,24 +12,29 @@
     grid-template-columns: minmax(min-content, max-content);
     grid-gap: $default-font-size;
     justify-content: center;
-    
-    padding: $default-font-size * 2.5 $default-font-size * 5 $default-font-size * 5;
+    overflow: hidden;
 
     @include respond(third-biggest) {
         grid-column: full-start / grid-end;
     }
     @include respond(fourth-biggest) {
         justify-items: center;
+        padding: $default-font-size * 1.25 $default-font-size * 5 $default-font-size * 2.5;
+        grid-gap: $scalingGap;
     }
     @include respond(realtor-break) {
-        padding: $default-font-size $default-font-size $default-font-size * 2 $default-font-size;
-        
+        padding: 0 $scalingGap;
     }
 
     &__logo {
-        height: $default-font-size * 2;
+        height: $default-font-size * 4;
         justify-self: center;
         align-self: center;
+        margin-top: $default-font-size * 2;
+        @include respond(realtor-break) {
+            height: $default-font-size * 3;
+            margin-top: 5vmin;
+        }
     }
     &__seenon {
         align-self: center;
@@ -56,9 +61,16 @@
             grid-gap: $default-font-size * 2;
             justify-items: center;
             filter: brightness(70%);
+            padding-bottom: $default-font-size * 2;
             img {
                 max-height: $default-font-size * 1.5;
                 max-width: 100%;
+            }
+            @include respond(fourth-biggest) {
+                padding-bottom: 0;
+            }
+            @include respond(realtor-break) {
+                padding-bottom: $scalingGap * 1.2;
             }
         }
     }

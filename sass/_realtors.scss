@@ -1,58 +1,60 @@
 .realtors {
-    background-color: $color-secondary;
-    grid-column: col-start 7 / -1;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    grid-row-gap: $default-font-size;
-    padding: $default-font-size * 3;
+	background-color: $color-secondary;
+	grid-column: col-start 7 / -1;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	grid-row-gap: $default-font-size;
+	padding: $default-font-size * 2 $default-font-size * 3 $default-font-size * 2.5;
+    overflow: hidden;
 
-    @include respond(third-biggest) {
-        grid-column: full-start / grid-end;
-    }
-    @include respond(realtor-break) {
-        padding: 10vmin;
-    }
+	@include respond(third-biggest) {
+		grid-column: full-start / grid-end;
+	}
+	@include respond(realtor-break) {
+		padding: $scalingGap $scalingGap $scalingGap * 2;
+    	grid-row-gap: $default-font-size / 2;
 
+	}
 
-    &__list {
-        display: grid;  
-        grid-template-columns: min-content max-content;
-        align-items: center;
-        grid-row-gap: 2vmin;
-        grid-column-gap: 1vmin;
+	&__list {
+		display: grid;
+		grid-template-columns: min-content max-content;
+		align-items: center;
+		grid-row-gap: 2vmin;
+		grid-column-gap: 1vmin;
 
-        @include respond(third-biggest) {
-            grid-template-columns: repeat(3, min-content max-content);
-            grid-column-gap: 0;
-        }
-        @include respond(realtor-break) {
-            grid-template-columns: min-content max-content;
-            grid-column-gap: 0;
-        }
-    }
-    &__image {
-        width: $default-font-size * 4;
-        // width: 5vmin;
-        display: block;
-        border-radius: 50%;
-        @include respond(third-biggest) {
-            text-align: center;
-            margin-right: $default-font-size;
-            &:not(:first-child) {
-                margin-left: $default-font-size * 2;
-            }
-        }
-        @include respond(realtor-break) {
-            &:not(:first-child) {
-                margin-left: 0;
-            }
-        }
-    }
-    &__sold {
-        text-transform: uppercase;
-        color: $color-grey-light-2;
-        margin-top: -$default-font-size * .33;
-    }
+		@include respond(third-biggest) {
+			grid-template-columns: repeat(3, min-content max-content);
+			grid-column-gap: 0;
+		}
+		@include respond(realtor-break) {
+			grid-template-columns: min-content max-content;
+			grid-column-gap: 0;
+		}
+	}
+	&__image {
+		width: $default-font-size * 4;
+		// width: $scalingGap;
+		display: block;
+		border-radius: 50%;
+		@include respond(third-biggest) {
+			text-align: center;
+			margin-right: $default-font-size;
+			&:not(:first-child) {
+				margin-left: $default-font-size * 2;
+			}
+		}
+		@include respond(realtor-break) {
+			&:not(:first-child) {
+				margin-left: 0;
+			}
+		}
+	}
+	&__sold {
+		text-transform: uppercase;
+		color: $color-grey-light-2;
+		margin-top: -$default-font-size * 0.33;
+	}
 }

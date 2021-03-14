@@ -1,43 +1,42 @@
 .features {
-    // background-color: $color-grey-light-2;
-    // grid-row: 2 / span 1;
-    grid-column: center-start / center-end;
+	// background-color: $color-grey-light-2;
+	// grid-row: 2 / span 1;
+	grid-column: center-start / center-end;
 
-    margin: 15vmin 0;
+	margin: 12.5vh 0;
 
-    display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 6rem;
-    // grid-auto-rows: ;
+	display: grid;
+	// grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 6rem;
+	// grid-auto-rows: ;
 
-    @include respond(third-biggest) {
-        margin: 10vmin 0;
-        grid-gap: 10vmin;
-    }
+	@include respond(third-biggest) {
+		margin: 10vmin 0;
+		grid-gap: 10vmin;
+	}
 }
 
 .feature {
-    display: grid;
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: min-content;
-    grid-row-gap: $default-font-size;
-    grid-column-gap: $default-font-size * 1.5;
-    &__icon {
-        fill: $color-primary;
-        width: 4.5rem;
-        height: 4.5rem;
-        grid-row: 1 / span 2;
-        transform: translateY(-$default-font-size * .5);
-    }
-    &__text {
-        align-self: flex-start;
-        font-size: $default-font-size;
-        grid-column: 2 / -1;
-    }
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: min-content;
+	grid-row-gap: $default-font-size;
+	grid-column-gap: $default-font-size * 1.5;
+	&__icon {
+		fill: $color-primary;
+		width: 4.5rem;
+		height: 4.5rem;
+		grid-row: 1 / span 2;
+		transform: translateY(-$default-font-size * 0.5);
+	}
+	&__text {
+		align-self: flex-start;
+		font-size: $default-font-size;
+		grid-column: 2 / -1;
+	}
 
-    & .heading-4 {
-        line-height: 1.25;
-    }
-    
+	& .heading-4 {
+		line-height: 1.25;
+	}
 }

@@ -5,6 +5,9 @@
     @if $breakpoint == fourth-biggest {
         @media only screen and (max-width: 45.9375em) {@content;}
     }
+    @if $breakpoint == footer-small {
+        @media only screen and (max-width: 50.6em) {@content;}
+    }
     @if $breakpoint == third-biggest {
         @media only screen and (max-width: 67.1875em){@content;}   //600px
     }
@@ -13,6 +16,9 @@
     }
     @if $breakpoint == biggest {
         @media only screen and (max-width: 83.4375em){@content;}       //1200px
+    }
+    @if $breakpoint == footer-break {
+        @media only screen and (max-width: 92.5em) {@content;}
     }
     @if $breakpoint == big-desktop{
         @media only screen and (min-width: 112.5em){@content;}      //1800px

@@ -1,70 +1,74 @@
 .story {
-    &__pictures {
-        background-color: $color-primary;
-        grid-column: full-start / col-start 5;
+	&__pictures {
+		background-color: $color-primary;
+		grid-column: full-start / col-start 5;
 
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        align-items: center;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		align-items: center;
 
-        background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), url(../img/back.jpg);
-        background-size: cover;
-        background-position: bottom;
+		background-image: linear-gradient(
+				rgba($color-primary, 0.5),
+				rgba($color-primary, 0.5)
+			),
+			url(../img/back.jpg);
+		background-size: cover;
+		background-position: bottom;
 
-        @include respond(fourth-biggest) {
-            grid-column: full-start / full-end;
-        }
-    }
+		@include respond(fourth-biggest) {
+			grid-column: full-start / full-end;
+		}
+	}
 
-    &__img--1 {
-        width: 100%;
-        grid-row: 2 / span 4;
-        grid-column: 2 / span 4;
-        box-shadow: $shadow-light;
-    }
-    &__img--2 {
-        width: 118%;
-        grid-column: 4  / -1;
-        grid-row: 4 / -1;
-        z-index: 100;
-        box-shadow: $shadow-light;
-        align-self: flex-start;
-        @include respond(fourth-biggest) {
-            width: 100%;
-        }
-    }
-    
-    &__content {
-        background-color: $color-grey-light-1;
-        grid-column: col-start 5 / full-end;
-        padding: $default-font-size * 4 8vw;
+	&__img--1 {
+		width: 100%;
+		grid-row: 2 / span 4;
+		grid-column: 2 / span 4;
+		box-shadow: $shadow-light;
+	}
+	&__img--2 {
+		width: 118%;
+		grid-column: 4 / -1;
+		grid-row: 4 / -1;
+		z-index: 100;
+		box-shadow: $shadow-light;
+		align-self: flex-start;
+		@include respond(fourth-biggest) {
+			width: 100%;
+		}
+	}
 
-        //flex box is preferable with 1D layouts
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: flex-start;
+	&__content {
+		background-color: $color-grey-light-1;
+		grid-column: col-start 5 / full-end;
+		padding: $default-font-size * 4 8vw;
 
-        //using grid in a 1D layout
-        display: grid;
-        grid-auto-rows: min-content;
-        align-content: center;
-        justify-items: flex-start;
-        @include respond(fourth-biggest) {
-            grid-column: full-start / full-end;
-            grid-row: 5 / span 1;
-        }
-        @include respond(realtor-break) {
-            padding: 10vmin;
-        }
-    }
-    &__text {
-        font-size: $default-font-size;    
-        font-style: italic;
-        margin-bottom: $default-font-size * 3;
-        @include respond(realtor-break) {
-            margin-bottom: 5vmin;
-        }
-    }
+		//flex box is preferable with 1D layouts
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: center;
+		// align-items: flex-start;
+
+		//using grid in a 1D layout
+		display: grid;
+		grid-auto-rows: min-content;
+		align-content: center;
+		justify-items: flex-start;
+		@include respond(fourth-biggest) {
+			grid-column: full-start / full-end;
+			grid-row: 5 / span 1;
+		}
+		@include respond(realtor-break) {
+			padding: 10vmin;
+		}
+	}
+	&__text {
+		font-size: $default-font-size;
+		font-style: italic;
+		margin-bottom: $default-font-size * 3;
+		@include respond(realtor-break) {
+			margin-bottom: $scalingGap;
+		}
+	}
 }
